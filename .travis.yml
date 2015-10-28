@@ -1,8 +1,2 @@
 language: csharp
 solution: EcConfig.sln
-install:
-  - nuget restore EcConfig.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
-script:
-  - xbuild /p:Configuration=Release EcConfig.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./EcConfig.Tests/bin/Release/EcConfig.Tests.dll
