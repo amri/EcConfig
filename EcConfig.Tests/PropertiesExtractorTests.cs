@@ -12,7 +12,7 @@ namespace EcConfig.Tests
 {
     public class PropertiesExtractorTests : BaseTest
     {
-        private readonly EcGlobalConfigurations _ecConfigs = new EcGlobalConfigurations { ConfigFilesPath = "", CurrentConfigFileName = "dev", IsCaseSensitive = true};
+        private readonly EcGlobalConfigurations _ecConfigs = new EcGlobalConfigurations { Path = "", Filename = "dev", IsCaseSensitive = true};
 
         [Test]
         public void GetProperties_FromCache()
@@ -34,7 +34,7 @@ namespace EcConfig.Tests
         [ExpectedException(typeof(EcConfigException), ExpectedMessage = "EcConfig is not able to find config file .\\test\\notexist.config")]
         public void GetProperties_ErrorConfigFileNotFound()
         {
-            EcGlobalConfigurations temp = new EcGlobalConfigurations { CurrentConfigFileName = "notexist", ConfigFilesPath = ".\\test" };
+            EcGlobalConfigurations temp = new EcGlobalConfigurations { Filename = "notexist", Path = ".\\test" };
             PropertiesExtractor.GetProperties(temp);
         }
     }

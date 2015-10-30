@@ -19,35 +19,35 @@ namespace EcConfig.Core.EcConfiguration
                 configs = new EcGlobalConfigurations();
 
                 //Filename
-                var configCurrentConfigFileName = ConfigurationManager.AppSettings[ConfigurationsNames.CurrentConfigFilename];
+                var configCurrentConfigFileName = ConfigurationManager.AppSettings[Configurations.Filename];
                 if (!string.IsNullOrEmpty(configCurrentConfigFileName))
                 {
                     if (configCurrentConfigFileName.IndexOfAny(Path.GetInvalidFileNameChars()) != -1)
                     {
-                        throw new EcConfigException(string.Format(Errors.ConfigCurrentConfigFileName, ConfigurationsNames.CurrentConfigFilename), null);
+                        throw new EcConfigException(string.Format(Errors.ConfigCurrentConfigFileName, Configurations.Filename), null);
                     }
-                    configs.CurrentConfigFileName = configCurrentConfigFileName;
+                    configs.Filename = configCurrentConfigFileName;
                 }
 
                 //Files path
-                var configFilesPath = ConfigurationManager.AppSettings[ConfigurationsNames.ConfigFilesPath];
+                var configFilesPath = ConfigurationManager.AppSettings[Configurations.Path];
                 if (!string.IsNullOrEmpty(configFilesPath))
                 {
                     if (configFilesPath.IndexOfAny(Path.GetInvalidPathChars()) != -1)
                     {
-                        throw new EcConfigException(string.Format(Errors.ConfigConfigFilesPath, ConfigurationsNames.ConfigFilesPath), null);
+                        throw new EcConfigException(string.Format(Errors.ConfigConfigFilesPath, Configurations.Path), null);
                     }
-                    configs.ConfigFilesPath = configFilesPath;
+                    configs.Path = configFilesPath;
                 }
 
                 //Case sensitive
-                var configIsCaseSensitive = ConfigurationManager.AppSettings[ConfigurationsNames.IsCaseSensitive];
+                var configIsCaseSensitive = ConfigurationManager.AppSettings[Configurations.IsCaseSensitive];
                 if (!string.IsNullOrEmpty(configIsCaseSensitive))
                 {
                     bool isCaseSensitive;
                     if (!Boolean.TryParse(configIsCaseSensitive, out isCaseSensitive))
                     {
-                        throw new EcConfigException(string.Format(Errors.ConfigIsCaseSensitive, ConfigurationsNames.IsCaseSensitive), null);
+                        throw new EcConfigException(string.Format(Errors.ConfigIsCaseSensitive, Configurations.IsCaseSensitive), null);
                     }
                     configs.IsCaseSensitive = isCaseSensitive;
                 }

@@ -10,8 +10,8 @@ namespace EcConfig.Tests
         public void DefaultEcConfigConfigurations()
         {
             var configs = new EcGlobalConfigurations();
-            Assert.AreEqual("default", configs.CurrentConfigFileName);
-            Assert.AreEqual("", configs.ConfigFilesPath);
+            Assert.AreEqual("default", configs.Filename);
+            Assert.AreEqual("", configs.Path);
             Assert.IsTrue(configs.IsCaseSensitive);
         }
     }

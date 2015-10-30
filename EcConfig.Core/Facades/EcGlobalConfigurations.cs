@@ -11,13 +11,13 @@ namespace EcConfig.Core.Facades
         public EcGlobalConfigurations()
         {
             //Default configurations
-            CurrentConfigFileName = "default";
-            ConfigFilesPath = string.Empty;
+            Filename = "default";
+            Path = string.Empty;
             IsCaseSensitive = true;
         }
 
-        public string CurrentConfigFileName { get; set; }
-        public string ConfigFilesPath { get; set; }
+        public string Filename { get; set; }
+        public string Path { get; set; }
         public bool IsCaseSensitive { get; set; }
     }
 }

@@ -3,3 +3,4 @@ packages/**/*
 **/bin
 **/*.csproj.user
 **/*.suo
+**/NuGet.config

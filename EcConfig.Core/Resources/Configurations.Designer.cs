@@ -22,14 +22,14 @@ namespace EcConfig.Core.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ConfigurationsNames {
+    public class Configurations {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ConfigurationsNames() {
+        internal Configurations() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EcConfig.Core.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EcConfig.Core.Resources.ConfigurationsNames", typeof(ConfigurationsNames).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EcConfig.Core.Resources.Configurations", typeof(Configurations).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,11 @@ namespace EcConfig.Core.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à ecconfig.configFilesPath.
+        ///   Recherche une chaîne localisée semblable à ecconfig.filename.
         /// </summary>
-        public static string ConfigFilesPath {
+        public static string Filename {
             get {
-                return ResourceManager.GetString("ConfigFilesPath", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à ecconfig.currentConfigFileName.
-        /// </summary>
-        public static string CurrentConfigFilename {
-            get {
-                return ResourceManager.GetString("CurrentConfigFilename", resourceCulture);
+                return ResourceManager.GetString("Filename", resourceCulture);
             }
         }
         
@@ -84,6 +75,15 @@ namespace EcConfig.Core.Resources {
         public static string IsCaseSensitive {
             get {
                 return ResourceManager.GetString("IsCaseSensitive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à ecconfig.path.
+        /// </summary>
+        public static string Path {
+            get {
+                return ResourceManager.GetString("Path", resourceCulture);
             }
         }
     }

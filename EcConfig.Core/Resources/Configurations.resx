@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ConfigFilesPath" xml:space="preserve">
-    <value>ecconfig.configFilesPath</value>
-  </data>
-  <data name="CurrentConfigFilename" xml:space="preserve">
-    <value>ecconfig.currentConfigFileName</value>
+  <data name="Filename" xml:space="preserve">
+    <value>ecconfig.filename</value>
   </data>
   <data name="IsCaseSensitive" xml:space="preserve">
     <value>ecconfig.isCaseSensitive</value>
+  </data>
+  <data name="Path" xml:space="preserve">
+    <value>ecconfig.path</value>
   </data>
 </root>

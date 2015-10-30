@@ -29,6 +29,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PublishPackage|AnyCPU'">
+    <OutputPath>bin\PublishPackage\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -47,10 +56,10 @@
     <Compile Include="Facades\EcGlobalConfigurations.cs" />
     <Compile Include="Exceptions\EcConfigException.cs" />
     <Compile Include="PropertiesExtractor.cs" />
-    <Compile Include="Resources\ConfigurationsNames.Designer.cs">
+    <Compile Include="Resources\Configurations.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ConfigurationsNames.resx</DependentUpon>
+      <DependentUpon>Configurations.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\EcConfigResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -66,9 +75,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\ConfigurationsNames.resx">
+    <EmbeddedResource Include="Resources\Configurations.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ConfigurationsNames.Designer.cs</LastGenOutput>
+      <LastGenOutput>Configurations.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\EcConfigResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

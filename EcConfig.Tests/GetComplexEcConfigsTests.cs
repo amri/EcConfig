@@ -11,15 +11,15 @@ namespace EcConfig.Tests
         [SetUp]
         public void Init()
         {
-            ConfigurationManager.AppSettings[ConfigurationsNames.ConfigFilesPath] = "configs/";//Override app.config/web.config appSettings configurations. DO NOT USE THIS TRICK FOR REAL APPLICATION
-            ConfigurationManager.AppSettings[ConfigurationsNames.CurrentConfigFilename] = "dev";//Override app.config/web.config appSettings configurations. DO NOT USE THIS TRICK FOR REAL APPLICATION
+            ConfigurationManager.AppSettings[Configurations.Path] = "configs/";//Override app.config/web.config appSettings configurations. DO NOT USE THIS TRICK FOR REAL APPLICATION
+            ConfigurationManager.AppSettings[Configurations.Filename] = "dev";//Override app.config/web.config appSettings configurations. DO NOT USE THIS TRICK FOR REAL APPLICATION
         }
 
         [TearDown]
         public void TearDown()
         {
-            ConfigurationManager.AppSettings[ConfigurationsNames.ConfigFilesPath] = null;//Override app.config/web.config appSettings configurations. DO NOT USE THIS TRICK FOR REAL APPLICATION
-            ConfigurationManager.AppSettings[ConfigurationsNames.CurrentConfigFilename] = null;//Override app.config/web.config appSettings configurations. DO NOT USE THIS TRICK FOR REAL APPLICATION
+            ConfigurationManager.AppSettings[Configurations.Path] = null;//Override app.config/web.config appSettings configurations. DO NOT USE THIS TRICK FOR REAL APPLICATION
+            ConfigurationManager.AppSettings[Configurations.Filename] = null;//Override app.config/web.config appSettings configurations. DO NOT USE THIS TRICK FOR REAL APPLICATION
         }
         #endregion
 

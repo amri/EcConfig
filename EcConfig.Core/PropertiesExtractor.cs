@@ -23,20 +23,20 @@ namespace EcConfig.Core
             if (!CacheManager.Exist(EcConfigResources.CacheKey_Properties))
             {
                 var path = string.Format(EcConfigResources.ConfigFileNameFormat,
-                    Path.Combine(ecConfs.ConfigFilesPath, ecConfs.CurrentConfigFileName));
-                XDocument doc = null;
+                    Path.Combine(ecConfs.Path, ecConfs.Filename));
+                XDocument doc;
                 try
                 {
                     doc = XDocument.Load(path);
                 }
                 catch (Exception e)
                 {
-                    throw new EcConfigException(string.Format(Errors.PropertiesExtractorConfigFileDoesNotExist, path), null);
+                    throw new EcConfigException(string.Format(Errors.PropertiesExtractorConfigFileDoesNotExist, path), e);
                 }
                 if (doc.Root == null)
                     throw new EcConfigException(string.Format(Errors.PropertiesExtractorSystemNotToExtractProperties, path), null);
 
-                ExtractProperties(doc.Root.Elements(), properties, 1, new List<string>());
+                ExtractProperties(doc.Root.Elements(), properties, 1, new List<string>(), ecConfs.IsCaseSensitive);
 
                 CacheManager.Add(EcConfigResources.CacheKey_Properties, properties);
             }
@@ -52,7 +52,8 @@ namespace EcConfig.Core
         /// <param name="properties"></param>
         /// <param name="level"></param>
         /// <param name="parents"></param>
-        private static void ExtractProperties(IEnumerable<XElement> elements, Dictionary<string, string> properties, int level, List<string> parents)
+        /// <param name="isCaseSensitive"></param>
+        private static void ExtractProperties(IEnumerable<XElement> elements, Dictionary<string, string> properties, int level, List<string> parents, bool isCaseSensitive)
         {
             foreach (var el in elements)
             {
@@ -62,14 +63,17 @@ namespace EcConfig.Core
                     if (parents.Count > 0)
                         parentPath = string.Join(EcConfigResources.PropertyJoinCharacter, parents) + EcConfigResources.PropertyJoinCharacter;
 
-                    properties.Add(parentPath + el.Attribute(XName.Get(EcConfigResources.KeyAttribute)).Value, el.Attribute(XName.Get(EcConfigResources.ValueAttribute)).Value);
+                    var key = parentPath + el.Attribute(XName.Get(EcConfigResources.KeyAttribute)).Value;
+                    key = isCaseSensitive ? key : key.ToLower();
+
+                    properties.Add(key, el.Attribute(XName.Get(EcConfigResources.ValueAttribute)).Value);
                 }
                 else
                 {
                     if (level <= Convert.ToInt32(EcConfigResources.RecursiveLevel))
                     {
                         parents.Add(el.Name.ToString());
-                        ExtractProperties(el.Elements(), properties, level++, parents);
+                        ExtractProperties(el.Elements(), properties, level++, parents, isCaseSensitive);
                         parents.Remove(el.Name.ToString());
                     }
                     else

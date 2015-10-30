@@ -16,9 +16,9 @@ namespace EcConfig.Tests
         [SetUp]
         public void Init()
         {
-            ConfigurationManager.AppSettings[ConfigurationsNames.CurrentConfigFilename] = "dev";
-            ConfigurationManager.AppSettings[ConfigurationsNames.ConfigFilesPath] = "./folder";
-            ConfigurationManager.AppSettings[ConfigurationsNames.IsCaseSensitive] = "true";
+            ConfigurationManager.AppSettings[Configurations.Filename] = "dev";
+            ConfigurationManager.AppSettings[Configurations.Path] = "./folder";
+            ConfigurationManager.AppSettings[Configurations.IsCaseSensitive] = "true";
         }
 
         [Test(Description = "Should return correct config from app/web.config file then insert configs inside cache")]
@@ -26,8 +26,8 @@ namespace EcConfig.Tests
         {
             Assert.IsFalse(MemoryCache.Default.Any(x => x.Key == EcConfigResources.CacheKey_EcConfigs));
             var configs = ConfigurationAnalyser.GetEcConfigConfigurations();
-            Assert.AreEqual("./folder", configs.ConfigFilesPath);
-            Assert.AreEqual("dev", configs.CurrentConfigFileName);
+            Assert.AreEqual("./folder", configs.Path);
+            Assert.AreEqual("dev", configs.Filename);
             Assert.IsTrue(configs.IsCaseSensitive);
             Assert.IsTrue(MemoryCache.Default.Any(x => x.Key == EcConfigResources.CacheKey_EcConfigs));
         }
@@ -35,24 +35,24 @@ namespace EcConfig.Tests
         [Test]
         public void GetEcConfigConfigurations_ReturnCacheConfigs()
         {
-            MemoryCache.Default.Add(EcConfigResources.CacheKey_EcConfigs, new EcGlobalConfigurations { ConfigFilesPath = "a", CurrentConfigFileName = "b", IsCaseSensitive = true }, DateTime.Now.AddDays(1));
+            MemoryCache.Default.Add(EcConfigResources.CacheKey_EcConfigs, new EcGlobalConfigurations { Path = "a", Filename = "b", IsCaseSensitive = true }, DateTime.Now.AddDays(1));
             var configs = ConfigurationAnalyser.GetEcConfigConfigurations();
-            Assert.AreEqual("a", configs.ConfigFilesPath);
+            Assert.AreEqual("a", configs.Path);
         }
 
         [Test]
-        [ExpectedException(typeof(EcConfigException), ExpectedMessage = "Invalid EcConfig configuration for ecconfig.currentConfigFileName : invalid filename")]
+        [ExpectedException(typeof(EcConfigException), ExpectedMessage = "Invalid EcConfig configuration for ecconfig.filename : invalid filename")]
         public void GetEcConfigConfigurations_InvalidCurrentFilename()
         {
-            ConfigurationManager.AppSettings[ConfigurationsNames.CurrentConfigFilename] = "²<>test";
+            ConfigurationManager.AppSettings[Configurations.Filename] = "²<>test";
             ConfigurationAnalyser.GetEcConfigConfigurations();
         }
 
         [Test]
-        [ExpectedException(typeof(EcConfigException), ExpectedMessage = "Invalid EcConfig configuration for ecconfig.configFilesPath : invalid path")]
+        [ExpectedException(typeof(EcConfigException), ExpectedMessage = "Invalid EcConfig configuration for ecconfig.path : invalid path")]
         public void GetEcConfigConfigurations_InvalidFilesPath()
         {
-            ConfigurationManager.AppSettings[ConfigurationsNames.ConfigFilesPath] = "<test/ok";
+            ConfigurationManager.AppSettings[Configurations.Path] = "<test/ok";
             ConfigurationAnalyser.GetEcConfigConfigurations();
         }
 
@@ -60,7 +60,7 @@ namespace EcConfig.Tests
         [ExpectedException(typeof(EcConfigException), ExpectedMessage = "Invalid EcConfig configuration for ecconfig.isCaseSensitive : should be true or false")]
         public void GetEcConfigConfigurations_InvalidIsCasSensitive()
         {
-            ConfigurationManager.AppSettings[ConfigurationsNames.IsCaseSensitive] = "truee";
+            ConfigurationManager.AppSettings[Configurations.IsCaseSensitive] = "truee";
             ConfigurationAnalyser.GetEcConfigConfigurations();
         }
     }
