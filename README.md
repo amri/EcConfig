@@ -24,25 +24,54 @@ BUT, trying to enumerate issues with app settings :
 
 
 ### 1. How to use it ?
-##### a. Install thanks to Nuget Package Manager...
+##### a. Installation thanks to Nuget package manager
 
-##### b. ... inside console project
+##### b. Example : Use it inside console project
 
-##### c. ... or inside web project
+##### c. Example : Use it inside web project
 
 ##### d. ... or any other kind of .NET applications
---
 
 ---
 ### 2. How to configure it  ?
-(options)
+In order to configure it, you can use specific app settings to add to your web or app config files.
 
---
+#### Filename
+**String as a filename**
+(*Default: default(.config)*)
+```xml
+<appSettings>
+  <add key="ecconfig.filename" value="dev" /> <!-- Search for dev.config file-->
+  ...
+</appSettings>
+```
+Configure filename which contains all your properties.
+
+#### Path
+**String as a path**
+(*Default: . (project root path)*)
+```xml
+<appSettings>
+  <add key="ecconfig.path" value="./configs/" /> <!-- Search for properties file inside 'configs' folder -->
+  ...
+</appSettings>
+```
+Configure path where is stored your config file.
+
+#### IsCaseSensitive
+**Boolean true or false**
+(*Default: true*)
+```xml
+<appSettings>
+  <add key="ecconfig.isCaseSensitive" value="false" /> <!-- EcConfig not case sensitive -->
+  ...
+</appSettings>
+```
+Configure if EcConfig should be case sensitive or not. If EcConfig is configured as case sensitive ; keys "myKey", "MyKEY" will be consider as the same key.
 
 ---
 ### 3. How to test it ?
 
---
 
 ---
 ### 4. How it works ?
@@ -51,7 +80,7 @@ BUT, trying to enumerate issues with app settings :
 ##### b. Cache
 
 ##### c. Testing
---
+
 
 ---
 ### 5. Releases
@@ -59,12 +88,11 @@ BUT, trying to enumerate issues with app settings :
 * Get properties inside other file than app or web .config files
 * Configure file name, path and case sensitivity
 * Properties cached for performance reasons
---
 
 ---
 ### 6. License
 MIT
---
+
 
 ---
 
