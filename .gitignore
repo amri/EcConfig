@@ -4,3 +4,6 @@ packages/**/*
 **/*.csproj.user
 **/*.suo
 **/NuGet.config
+*.bak
+*.nupkg
+*.log
