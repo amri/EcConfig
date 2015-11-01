@@ -52,7 +52,7 @@ Once EcConfig is installed inside your project(s) you just have to create your o
 </ec>
 ```
 
-##### c. Add properties and sub parts of properties
+##### c. Add properties and sub-parts of properties
 Example of property :
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -61,7 +61,7 @@ Example of property :
 </ec>
 ```
 
-Example of property inside a sub part:
+Example of property inside a sub-part:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ec>
@@ -83,7 +83,7 @@ using EcConfig.Core; //EcConfig.Core.Config.Get(...)
 Config.Get("myKey");
 ```
 
-- Get property inside sub part
+- Get property inside sub-part
 ```csharp
 Config.Get("mysubpart.myKeyInsideSubPart");
 ```
