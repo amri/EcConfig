@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/spywen/EcConfig.svg?branch=master)](https://travis-ci.org/spywen/EcConfig)
 
 ### What is EcConfig ?
-**EcConfig is a simple Nuget plugin (for Microsoft development platform including .NET) which enable you to give the control to your client of your .NET application without risking to break your service by using different file(s) than app.config or web.config files.**
+**EcConfig is a simple Nuget plugin (for Microsoft development platform including .NET) to give the control to your client of your .NET application without risking to break your service by using different file(s) than app.config or web.config files, and then some !**
 
 What can you find inside common app.config or web.config files ? Connection string (of course !), links to wcf services, entity frameworks configurations, config section, many other part ununderstandable for most of us... ;) AND obviously APP SETTINGS !!!
 Actually from the customer point view :
@@ -25,10 +25,23 @@ BUT, trying to enumerate issues with app settings :
 
 ### 1. How to use it ?
 ##### a. Installation thanks to Nuget package manager
+1. First of all, be sure that Nuget Package Manager is installed with your Visual Studio. Find more information about how to install it at : [https://docs.nuget.org/consume/installing-nuget](https://docs.nuget.org/consume/installing-nuget)
+2. Right click on your solution then click on `Manage Nuget Package`>`Online`
+3. Search for `EcConfig (Easy Client Config)` then click on `Install`
+4. Select projects which will use EcConfig
+5. Now it's done, you can use EcConfig ;)
 
+Once EcConfig is installed inside your project(s) you just have to create your own configuration file and use it !
+
+##### b. 
 ##### b. Example : Use it inside console project
+*Find an example inside this Github repository with the project :* `EcConfig.Example.Console`
+
 
 ##### c. Example : Use it inside web project
+*Find an example inside this Github repository with the project :* `EcConfig.Example.Web`
+
+![EcConfig.Example.Web screenshot](https://github.com/spywen/EcConfig/blob/master/Resources/EcConfig.Example.Web.png "EcConfig.Example.Web screenshot")
 
 ##### d. ... or any other kind of .NET applications
 
