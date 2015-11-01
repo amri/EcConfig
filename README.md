@@ -8,6 +8,8 @@ EcConfig provides you following functionalities :
 * split up app.config (web.config) development configurations from client oriented configurations properties
 * possibilities to create sub-parts of properties 
 
+---
+<br/>
 As in regular app.config or web.config files you would find : Connection strings (of course !), links to wcf services, entity framework configurations, configSections, many other ununderstandable parts for most of us... ;) AND obviously APP SETTINGS !!!
 Actually from the client point of view :
 * the connexion strings : "we don't care !",
