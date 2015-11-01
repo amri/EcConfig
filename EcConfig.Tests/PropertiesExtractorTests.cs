@@ -31,7 +31,7 @@ namespace EcConfig.Tests
         }
 
         [Test]
-        [ExpectedException(typeof(EcConfigException), ExpectedMessage = "EcConfig is not able to find config file .\\test\\notexist.config")]
+        [ExpectedException(typeof(EcConfigException))]
         public void GetProperties_ErrorConfigFileNotFound()
         {
             EcGlobalConfigurations temp = new EcGlobalConfigurations { Filename = "notexist", Path = ".\\test" };

@@ -24,6 +24,11 @@ namespace EcConfig.Core
             {
                 var path = string.Format(EcConfigResources.ConfigFileNameFormat,
                     Path.Combine(ecConfs.Path, ecConfs.Filename));
+
+                var assemblyPath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+
+                path = Path.Combine(assemblyPath ?? string.Empty, path);
+
                 XDocument doc;
                 try
                 {
