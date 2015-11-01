@@ -2,14 +2,15 @@
 <package >
   <metadata>
     <id>EcConfig</id>
-    <version>1.0.0</version>
-    <title>EcConfig</title>
+    <version>0.0.1</version>
+    <title>EcConfig (Easy Client Config)</title>
     <authors>Laurent Babin</authors>
     <owners></owners>
     <description>
-      
+      Easy Client Config plugin
     </description>
     <releaseNotes>
+      Test 1
     </releaseNotes>
     <summary>
       
