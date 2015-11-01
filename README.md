@@ -261,7 +261,7 @@ Configure if EcConfig should be case sensitive or not. If EcConfig is configured
 
 ---
 ### 3. How to test it ?
-In order to be able to procceed to Unit tests or any other kind of tests on a part of your application which could use EcConfig: just configured the app.config of your test project and configure it to be able to find a config file inside the same project.
+In order to be able to proceed to Unit tests or any other kind of tests on a part of your application which could use EcConfig: just configured the app.config of your test project and configure it to be able to find a config file inside the same test project.
 
 ---
 ### 4. How it works ?
