@@ -1,26 +1,31 @@
 # EcConfig (Easy Client Config)
 [![Build Status](https://travis-ci.org/spywen/EcConfig.svg?branch=master)](https://travis-ci.org/spywen/EcConfig)
 
-### What is EcConfig ?
-**EcConfig is a simple Nuget plugin (for Microsoft development platform including .NET) to give the control to your client of your .NET application without risking to break your service by using different file(s) than app.config or web.config files, and then some !**
+### EcConfig, what is that ?
+**EcConfig is a simple Nuget plugin (for Microsoft development platform including .NET) to give the control to your client of your .NET application without risking to damage your service by using different file(s) than app.config or web.config files, and then some !**
 
-What can you find inside common app.config or web.config files ? Connection string (of course !), links to wcf services, entity frameworks configurations, config section, many other part ununderstandable for most of us... ;) AND obviously APP SETTINGS !!!
-Actually from the customer point view :
-* the connexion string : "we don't care !",
+EcConfig provides you following functionalities :
+* split up app.config (web.config) development configurations from client oriented configurations properties
+* possibilities to create sub-parts of properties 
+
+As in regular app.config or web.config files you would find : Connection strings (of course !), links to wcf services, entity framework configurations, configSections, many other ununderstandable parts for most of us... ;) AND obviously APP SETTINGS !!!
+Actually from the client point of view :
+* the connexion strings : "we don't care !",
 * wcf services linked to the app : "we don't care !",
 * entity framework configs : "we don't care !",
 * configSections : "what is this ? Don't care !"
-* app settings : "OHHH i can configurate my app by myself thanks to app settings without asking for an evolution and be facturated more than 2000$ to change a "P" by a "D" or provide the possibility to download 4 documents in the same time rather than 3 for the same price ? Great jobs guys !"
+* app settings : "This is the real attractive feature of this package because you could set up the app SIMPLY and BY YOURSELF - thanks to app settings - without asking for any evolution !"
 
-BUT, trying to enumerate issues with app settings : 
-- if customer trying to change app settings and unfortunately change another part of the configuration files -> **service failures could occured**
-- app setting part could be composed of thousand of settings -> **how many time to find the correct configurations ? And service failures could occured if we change wrong setting**
-- app settings could be modifiate without type considerations -> **service failures could still occured**
+BUT, obviously all this can imply some potential issues : 
+- when client tries to change app settings and unfortunately changes another part of the configuration files ==> **service failures could occur**
+- app settings part could be composed of thousands of settings ==> **how long do we need to find the correct configurations ? Meanwhile service failures could occur if we change wrong setting**
+- app settings could be modified without type considerations ==> **service failures could still occur**
 - etc...
 
-**The purpose of EcConfig (Easy Client Configuration) is to provide an easy and powerful way to edit these configurations for the client and limiting risks.**
+**The purpose of EcConfig (Easy Client Configuration) is to provide an easy and powerful way to edit these configurations for the client in limiting risks.**
 
-**How it works ?** : EcConfig simply externalizes app settings from configuration file(s) (app.config/web.config) in order to separate application development configurations (which should not be modifiate without development team approbation) from app settings which enable the client to change some global options of his application. For future release a simple web application will enable the customer to update these settings thanks to a simple web page.
+**How it works ?** : EcConfig simply externalizes app settings from configuration file(s) (app.config/web.config) in order to separate application development configurations (which should not be modified without development team approbation) from app settings which allow client to change some global options of his application. For future release a simple web application will allow client to update these settings thanks to a simple web page.
+
 
 
 ### 1. How to use it ?
