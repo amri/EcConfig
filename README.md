@@ -1,6 +1,8 @@
 # EcConfig (Easy Client Config)
 [![Build Status](https://travis-ci.org/spywen/EcConfig.svg?branch=master)](https://travis-ci.org/spywen/EcConfig)
 
+![EcConfig logo](https://raw.githubusercontent.com/spywen/EcConfig/master/Resources/EcConfigLogo.png "EcConfig logo")
+
 ### EcConfig, what is that ?
 **EcConfig is a simple Nuget plugin (for Microsoft development platform including .NET) to give the control to your client of your .NET application without risking to damage your service by using different file(s) than app.config or web.config files, and then some !**
 
