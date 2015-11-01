@@ -1,4 +1,4 @@
-# EcConfig (Easy Client Configuration)
+# EcConfig (Easy Client Config)
 [![Build Status](https://travis-ci.org/spywen/EcConfig.svg?branch=master)](https://travis-ci.org/spywen/EcConfig)
 
 ### What is EcConfig ?
@@ -66,19 +66,22 @@ Example of property inside a sub part:
 ```
 
 ##### d. Get properties inside my application
-1. Import EcConfig.Core
+- Import EcConfig.Core
 ```csharp
 using EcConfig.Core; //EcConfig.Core.Config.Get(...)
 ```
-2. Get property
+
+- Get property
 ```csharp
 Config.Get("myKey");
 ```
-3. Get property inside sub part
+
+- Get property inside sub part
 ```csharp
 Config.Get("mysubpart.myKeyInsideSubPart");
 ```
-4) Get property as an integer
+
+- Get property as an integer
 ```csharp
 Config.Get("myKey").toInt();
 ```
@@ -86,7 +89,7 @@ Config.Get("myKey").toInt();
 ##### e. Example : Use it inside console project
 *Find full example inside EcConfig Github repository with the project :* `EcConfig.Example.Console` <br/>
 This example is based on a simple default.config file at the root of the project: <br/> 
-EcConfig.Example.Console/default.config
+*EcConfig.Example.Console/default.config*
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ec>
@@ -104,7 +107,7 @@ EcConfig.Example.Console/default.config
   <p key="number2" value="2"/>
 </ec>
 ```
-EcConfig.Example.Console/Program.cs
+*EcConfig.Example.Console/Program.cs*
 ```csharp
 using System.Configuration;
 using EcConfig.Core;
@@ -133,14 +136,14 @@ namespace EcConfig.Example.Console
     }
 }
 ```
-Console output: <br/>
+*Console output* <br/>
 ![EcConfig.Example.Console Console output](https://raw.githubusercontent.com/spywen/EcConfig/master/Resources/ConsoleOutput.png "EcConfig.Example.Console Console output")
 
 ##### f. Example : Use it inside web project
 *Find this example inside EcConfig Github repository with the project :* `EcConfig.Example.Web` <br/>
 
-This example is a little bit more complete because configured thanks app settings. So the configuration file which contains properties is stored a specific folder : "./configs/" and is called : "configs.config"<br/> 
-EcConfig.Example.Web/Web.config
+For this example we decided to configure EcConfig to search for a configs.config file inside a configs folder thanks to EcConfig configurations. See [2. How to configure it ?](#2.-How-to-configure-it-?))<br/> 
+*EcConfig.Example.Web/Web.config*
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
@@ -159,7 +162,7 @@ EcConfig.Example.Web/Web.config
 </configuration>
 ```
 
-EcConfig.Example.Web/configs/configs.config
+*EcConfig.Example.Web/configs/configs.config*
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ec>
@@ -175,7 +178,7 @@ EcConfig.Example.Web/configs/configs.config
   </contact>
 </ec>
 ```
-EcConfig.Example.Web/Views/Shared/_Layout.cshtml
+*EcConfig.Example.Web/Views/Shared/_Layout.cshtml*
 ```html
 <!DOCTYPE html>
 <html>
@@ -206,7 +209,7 @@ EcConfig.Example.Web/Views/Shared/_Layout.cshtml
   [...]
 </html>
 ```
-Web site output: <br/>
+*Web site output* <br/>
 ![EcConfig.Example.Web screenshot](https://github.com/spywen/EcConfig/blob/master/Resources/EcConfig.Example.Web.png "EcConfig.Example.Web screenshot")
 
 ##### g. ... or any other kind of .NET applications
@@ -251,7 +254,7 @@ Configure if EcConfig should be case sensitive or not. If EcConfig is configured
 
 ---
 ### 3. How to test it ?
-
+In order to be able to procceed to Unit tests or any other kind of tests on a part of your application which could use EcConfig: just configured the app.config of your test project and configure it to be able to find a config file inside the same project.
 
 ---
 ### 4. How it works ?
