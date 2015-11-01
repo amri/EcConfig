@@ -268,23 +268,38 @@ In order to be able to proceed to Unit tests or any other kind of tests on a par
 ---
 ### 4. How it works ?
 ##### a. Architecture
+*EcConfig Architecture*
+![EcConfig Architecture](https://raw.githubusercontent.com/spywen/EcConfig/master/Resources/EcConfigArchitecture.png "EcConfig Architecture")
+
+The entry point of the application is : EcConfig.Core.Config.cs class, with public method : `Property Get(string key)`. This class proceed in three steps :
+
+1. Search for EcConfig configurations inside app.config or web.config thanks to `ConfigurationManager.AppSettings`
+2. Extract properties from new config file (according to EcConfig previous configurations found) and return them
+3. According to the key send as an attribute return corresponding value as a Property object (string by default).
 
 ##### b. Cache
+In order to improve EcConfig performance:
+- EcConfig configurations are cached thanks to `MemoryCache.Default` with key : *EcConfig_EcConfs_bc8c1337d0804ae74f3551c86dad2629*
+- EcConfig properties are cached thanks to `MemoryCache.Default` with key : *EcConfig_Properties_bc8c1337d0804ae74f3551c86dad2629*
 
 ##### c. Testing
-
+EcConfig is fully Unit tested thanks to the EcConfig.Tests project. This project uses NUnit framework.
 
 ---
-### 5. Releases
+### 5. Can i improve EcConfig ?
+**Of course you can ! You are welcome !**
+Don't hesitate to pull request for code modifications or documentation modifications !
+
+---
+### 6. Releases
 ##### 1.0.0 : Initial release
 * Get properties inside other file than app or web .config files
 * Configure file name, path and case sensitivity
 * Properties cached for performance reasons
 
 ---
-### 6. License
+### 7. License
 MIT
-
 
 ---
 
