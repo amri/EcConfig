@@ -30,68 +30,50 @@ BUT, obviously all this can imply some potential issues from development team po
 **How it works ?** : EcConfig simply externalizes app settings from configuration file(s) (app.config/web.config) in order to separate application development configurations (which should not be modified without development team approbation) from app settings which allow client to change some global options of his application.
 
 
-
+---
 ### 1. How to use it ?
 ##### a. Installation thanks to Nuget package manager
 1. First of all, be sure that Nuget Package Manager is installed with your Visual Studio. Find more information about how to install it at : [https://docs.nuget.org/consume/installing-nuget](https://docs.nuget.org/consume/installing-nuget)
 2. Right click on your solution then click on `Manage Nuget Package`>`Online`
 3. Search for `EcConfig (Easy Client Config)` then click on `Install`
-4. Select projects which will use EcConfig
+4. Select projects where EcConfig will be used
 5. Now it's done, you can use EcConfig ;)
 
 ##### b. Create your config file
 Once EcConfig is installed inside your project(s) you just have to create your own configuration file and use it !
 
 1. Create xml file and insert it inside your root project
-2. Rename it as `default.config` (default EcConfig filename which could be modifiate thanks to EcConfig configurations. See [2. How to configure it ?](#2.-How-to-configure-it-?))
-3. Right click on it and click on properties. Select `Copy each time` for `Copy in output directory` option  
-4. Base default.config file should look like :
+2. Rename it as `default.config` (:information_source: default EcConfig filename which could be modifiate thanks to EcConfig configurations. See [2. How to configure it ?](#2-how-to-configure-it-)
+3. :warning: Right click on it and click on properties. Select `Copy each time` for `Copy in output directory` option  
+4. Edit the content of default.config with :
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ec>
 
 </ec>
 ```
+The baseline content of EcConfig files should look like that.
 
 ##### c. Add properties and sub-parts of properties
 Example of property :
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ec>
-  <p key="myKey" value="1"/>
-</ec>
-```
-
-Example of property inside a sub-part:
-```xml
-<?xml version="1.0" encoding="utf-8" ?>
-<ec>
-  <p key="myKey" value="1"/>
+  <p key="myKey" value="1"/> <!-- Simple property. Key : myKey-->
   <mysubpart>
-    <p key="myKeyInsideSubPart" value="myValueInsideSubPart"/>
+    <p key="myKeyInsideSubPart" value="myValueInsideSubPart"/> <!-- Property inside a sub-part. Key : mysubpart.myKeyInsideSubPart -->
   </mysubpart>
 </ec>
 ```
 
 ##### d. Get properties inside my application
-- Import EcConfig.Core
 ```csharp
 using EcConfig.Core; //EcConfig.Core.Config.Get(...)
-```
-
-- Get property
-```csharp
-Config.Get("myKey");
-```
-
-- Get property inside sub-part
-```csharp
-Config.Get("mysubpart.myKeyInsideSubPart");
-```
-
-- Get property as an integer
-```csharp
-Config.Get("myKey").toInt();
+[...]
+Config.Get("myKey"); //Get simple property (as a string by default)
+Config.Get("mysubpart.myKeyInsideSubPart"); //Get property inside sub-part
+Config.Get("myKey").toInt(); //Get property as an integer
+[...]
 ```
 
 ##### e. Example : Use it inside console project
