@@ -98,9 +98,15 @@ Config.Get("myKey").toInt(); //Get property as an integer
 ```
 
 ##### e. Example : Use it inside console project
-*Find full example inside EcConfig Github repository with the project :* `EcConfig.Example.Console` <br/>
-This example is based on a simple default.config file at the root of the project: <br/> 
-*EcConfig.Example.Console/default.config*
+*Find full example inside EcConfig Github repository with the project :* <a href="https://github.com/spywen/EcConfig/tree/master/EcConfig.Example.Console" target="_blank">EcConfig.Example.Console</a>
+<br/>
+<br/>
+
+This example is based on a simple `default.config` file at the root of the project: 
+<br/>
+<br/>
+
+:arrow_lower_right: *EcConfig.Example.Console/default.config*
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ec>
@@ -118,7 +124,7 @@ This example is based on a simple default.config file at the root of the project
   <p key="number2" value="2"/>
 </ec>
 ```
-*EcConfig.Example.Console/Program.cs*
+:arrow_lower_right: *EcConfig.Example.Console/Program.cs*
 ```csharp
 using System.Configuration;
 using EcConfig.Core;
@@ -147,20 +153,22 @@ namespace EcConfig.Example.Console
     }
 }
 ```
-*Console output* <br/>
+
+:arrow_lower_right: *Console output* <br/>
 ![EcConfig.Example.Console Console output](https://raw.githubusercontent.com/spywen/EcConfig/master/Resources/ConsoleOutput.png "EcConfig.Example.Console Console output")
 
 ##### f. Example : Use it inside web project
-*Find this example inside EcConfig Github repository with the project :* `EcConfig.Example.Web` <br/>
+*Find this example inside EcConfig Github repository with the project :* <a href="https://github.com/spywen/EcConfig/tree/master/EcConfig.Example.Web" target="_blank">EcConfig.Example.Web</a>
+<br/>
+<br/>
 
-For this example we decided to configure EcConfig to search for a configs.config file inside a configs folder thanks to EcConfig configurations. See [2. How to configure it ?](#2.-How-to-configure-it-?))<br/> 
-*EcConfig.Example.Web/Web.config*
+For this example we decided to configure EcConfig to search for a `configs.config` file inside a `configs` folder thanks to EcConfig configurations. See [2. How to configure it ?](#2-how-to-configure-it-)
+<br/> 
+<br/> 
+
+:arrow_lower_right: *EcConfig.Example.Web/Web.config*
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Pour plus d’informations sur la configuration de votre application ASP.NET, rendez-vous sur 
-  http://go.microsoft.com/fwlink/?LinkId=301880
-  -->
 <configuration>
 [...]
 <appSettings>
@@ -173,7 +181,7 @@ For this example we decided to configure EcConfig to search for a configs.config
 </configuration>
 ```
 
-*EcConfig.Example.Web/configs/configs.config*
+:arrow_lower_right: *EcConfig.Example.Web/configs/configs.config*
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ec>
@@ -189,7 +197,7 @@ For this example we decided to configure EcConfig to search for a configs.config
   </contact>
 </ec>
 ```
-*EcConfig.Example.Web/Views/Shared/_Layout.cshtml*
+:arrow_lower_right: *EcConfig.Example.Web/Views/Shared/_Layout.cshtml*
 ```html
 <!DOCTYPE html>
 <html>
@@ -220,11 +228,11 @@ For this example we decided to configure EcConfig to search for a configs.config
   [...]
 </html>
 ```
-*Web site output* <br/>
+:arrow_lower_right: *Web site output* <br/>
 ![EcConfig.Example.Web screenshot](https://github.com/spywen/EcConfig/blob/master/Resources/EcConfig.Example.Web.png "EcConfig.Example.Web screenshot")
 
 ##### g. ... or any other kind of .NET applications
-Of course, EcConfig is not limited of this two kind of .NET applications. Be original and use it with all your products !
+Of course, EcConfig is not limited of this two kind of .NET applications. Be original and use it with all your projects !
 
 ---
 ### 2. How to configure it ?
