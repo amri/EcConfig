@@ -31,7 +31,7 @@ EcConfig provides you following functionalities :
 6. [Releases](#6-releases)
 7. [License](#7-license)
 8. [FAQ](#8-faq)
-9. [Trunk Based Development (TBD) branching model](#9-trunk-based-development-TBD-branching-model)
+9. [Trunk Based Development (TBD) branching model](#9-trunk-based-development-tbd-branching-model)
 
 ---
 <br/>
