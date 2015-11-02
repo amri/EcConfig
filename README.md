@@ -30,6 +30,8 @@ EcConfig provides you following functionalities :
 5. [Can i improve EcConfig ?](#5-can-i-improve-ecconfig-)
 6. [Releases](#6-releases)
 7. [License](#7-license)
+8. [FAQ](#8-faq)
+9. [Trunk Based Development (TBD) branching model](#9-trunk-based-development-TBD-branching-model)
 
 ---
 <br/>
@@ -312,5 +314,16 @@ Don't hesitate to pull request for code modifications or documentation modificat
 MIT
 
 ---
+### 8. FAQ
 
+*Nothing for the moment*
+
+---
+### 9. Trunk Based Development (TBD) branching model
+EcConfig is based on a specific branching model : Trunk Based Development
+![Trunk Based Model schema example](http://paulhammant.com/images/what_is_trunk.jpg "Trunk Based Model schema example")
+<br/>
+*Find more information at : <a href="http://paulhammant.com/2013/04/05/what-is-trunk-based-development/" target="_blank">http://paulhammant.com/2013/04/05/what-is-trunk-based-development</a>*
+
+---
 
