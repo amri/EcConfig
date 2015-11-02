@@ -11,6 +11,27 @@ EcConfig provides you following functionalities :
 * possibilities to create sub-parts of properties 
 
 ---
+
+## Table of contents
+1. [How to use it ?](#1-how-to-use-it-)
+    - [a. Installation thanks to Nuget package manager](#a-installation-thanks-to-nuget-package-manager)
+    - [b. Create your config file](#b-create-your-config-file)
+    - [c. Add properties and sub-parts of properties](#c-add-properties-and-sub-parts-of-properties)
+    - [d. Get properties inside my application](#d-get-properties-inside-my-application)
+    - [e. Example : Use it inside console project](#e-example--use-it-inside-console-project)
+    - [f. Example : Use it inside web project](#f-example--use-it-inside-web-project)
+    - [g. ... or any other kind of .NET applications](#g--or-any-other-kind-of-net-applications)
+2. [How to configure it ?](#2-how-to-configure-it-)
+3. [How to test it ?](#3-how-to-test-it-)
+4. [How it works ?](#4-how-it-works-)
+    - [a. Architecture](#a-architecture)
+    - [b. Cache](#b-cache)
+    - [c. Testing](#c-testing)
+5. [Can i improve EcConfig ?](#5-can-i-improve-ecconfig-)
+6. [Releases](#6-releases)
+7. [License](#7-license)
+
+---
 <br/>
 As in regular app.config or web.config files you would find : Connection strings (of course !), links to wcf services, entity framework configurations, configSections, many other ununderstandable parts for most of us... ;) AND obviously APP SETTINGS !!!
 Actually from the client point of view :
